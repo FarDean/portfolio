@@ -5,8 +5,13 @@
 }
 
 body {
-	margin: 0;
 	font-family: "Oxygen", sans-serif;
+	background: url("https://cdn.dribbble.com/users/32512/screenshots/3865296/trapcode_map_by_gleb.gif")
+		no-repeat center center fixed;
+	background-size: cover;
+	color: #fff;
+	position: relative;
+	min-height: 100vh;
 }
 
 code {
