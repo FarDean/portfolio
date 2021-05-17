@@ -1,0 +1,29 @@
+.nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	height: 10vh;
+	margin: 0 auto;
+	background-color: transparent;
+}
+
+.nav div + div {
+	padding-left: 30px;
+}
+
+.nav div {
+	position: relative;
+}
+
+.nav div.active::after {
+	content: "";
+	position: absolute;
+	width: 5px;
+	height: 3px;
+	border-radius: 16px;
+	background-color: #fff;
+	top: 28px;
+	left: 65%;
+	transform: translate(50%, 50%);
+}
