@@ -1,7 +1,13 @@
 .parent {
 	position: absolute;
-	left: 200px;
 	top: 20%;
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+	width: 80%;
+	margin: 0 auto;
 }
 
 .grid {
@@ -10,11 +16,12 @@
 	grid-template-rows: repeat(7, 1fr);
 	grid-column-gap: 0px;
 	grid-row-gap: 0px;
-
+	padding: 10px;
 	font-size: 4rem;
 	border-bottom: 1px ridge white;
 	border-top: 1px ridge white;
 	border-radius: 0px 14px 0px 14px;
+	grid-area: 1 / 1 / 2 / 2;
 }
 
 .div1 {
@@ -40,7 +47,20 @@
 }
 
 .bio {
-	font-size: 0.9rem;
-	color: gray;
-	padding: 10px 3px;
+	display: flex;
+	flex-direction: column;
+	font-size: 1.1rem;
+	grid-area: 1 / 2 / 2 / 3;
+	align-items: center;
+	padding-top: 50px;
+}
+.bio div:nth-child(1) {
+	color: rgb(216, 216, 216);
+}
+.bio div:nth-child(2) {
+	color: rgb(255, 255, 255);
+	font-weight: 700;
+}
+.bio div:nth-child(3) {
+	color: rgb(121, 121, 121);
 }
