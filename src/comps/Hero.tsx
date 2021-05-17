@@ -13,21 +13,18 @@ export const Hero = (): JSX.Element => {
 				<div className={styles.div7}>n</div>
 			</div>
 			<div className={styles.bio}>
-				<div>
-					<div>
-						Hey, my name is fardean. <span> I'm a JavaScript enthusiast, </span>
-					</div>
-				</div>
+				<div>Hey, my name is Fardean,</div>
+				<div> I'm a JavaScript enthusiast, </div>
 
-				<div> and currently Coding as a hobby!</div>
+				<div> and currently Code as a hobby!</div>
 			</div>
-			<div>
+			<div className={styles.social}>
 				<div>
 					<i className="fab fa-github"></i>
 				</div>
-				<div>
+				{/* <div>
 					<i className="fab fa-twitter"></i>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

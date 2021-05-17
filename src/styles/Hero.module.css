@@ -1,13 +1,9 @@
 .parent {
-	position: absolute;
-	top: 20%;
-	display: grid;
-	grid-template-columns: 1fr 4fr;
-	grid-template-rows: 1fr;
-	grid-column-gap: 0px;
-	grid-row-gap: 0px;
+	display: flex;
+	flex-direction: column;
 	width: 80%;
 	margin: 0 auto;
+	margin-top: 50px;
 }
 
 .grid {
@@ -54,6 +50,10 @@
 	align-items: center;
 	padding-top: 50px;
 }
+
+.bio div {
+	line-height: 1.5;
+}
 .bio div:nth-child(1) {
 	color: rgb(216, 216, 216);
 }
@@ -63,4 +63,16 @@
 }
 .bio div:nth-child(3) {
 	color: rgb(121, 121, 121);
+}
+
+.social {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 60px;
+	font-size: 2.5rem;
+}
+
+.social div + div {
+	padding-left: 10px;
 }

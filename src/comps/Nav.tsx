@@ -3,7 +3,6 @@ export const Nav = (): JSX.Element => {
 	return (
 		<div className={styles.nav}>
 			<div className={styles.active}>
-				{" "}
 				<i className="fas fa-laptop-house"></i> Home
 			</div>
 			<div>
