@@ -1,4 +1,5 @@
 import styles from "./../styles/Hero.module.css";
+import { Link } from "react-router-dom";
 
 export const Hero = (): JSX.Element => {
 	return (
@@ -20,7 +21,9 @@ export const Hero = (): JSX.Element => {
 			</div>
 			<div className={styles.social}>
 				<div>
-					<i className="fab fa-github"></i>
+					<a target="_blank" rel="noreferrer" href="https://github.com/FarDean">
+						<i className="fab fa-github"></i>
+					</a>
 				</div>
 				{/* <div>
 					<i className="fab fa-twitter"></i>
