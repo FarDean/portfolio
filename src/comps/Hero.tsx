@@ -1,5 +1,4 @@
 import styles from "./../styles/Hero.module.css";
-import { Link } from "react-router-dom";
 
 export const Hero = (): JSX.Element => {
 	return (
