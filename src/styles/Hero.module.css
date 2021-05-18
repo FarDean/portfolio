@@ -95,6 +95,8 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		flex-direction: row;
+		height: 90vh;
+
 		width: 90%;
 		margin: 0 auto;
 	}
@@ -107,7 +109,34 @@
 		width: 50%;
 		justify-content: center;
 	}
-	/* .social {
-		margin-top: 60px;
-	} */
+}
+
+@media (min-width: 1000px) {
+	.parent {
+		width: 95%;
+		justify-content: space-between;
+	}
+	.grid {
+		width: 46%;
+	}
+
+	.bio {
+		width: 46%;
+		font-size: 1.1rem;
+	}
+	.social {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		/* margin-top: 30px; */
+
+		font-size: 2rem;
+	}
+}
+
+@media (min-width: 1500px) {
+	.parent {
+		padding: 2em 0 3em 9em;
+	}
 }
