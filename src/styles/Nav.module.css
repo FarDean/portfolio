@@ -40,4 +40,15 @@
 
 .nav a div {
 	display: none;
+	padding-left: 3px;
+}
+
+/* Media Queries */
+@media (min-width: 555px) {
+	.nav a div {
+		display: block;
+	}
+	.nav div + div {
+		padding-left: 30px;
+	}
 }
