@@ -24,9 +24,9 @@ export const Hero = (): JSX.Element => {
 						<i className="fab fa-github"></i>
 					</a>
 				</div>
-				{/* <div>
+				<div>
 					<i className="fab fa-twitter"></i>
-				</div> */}
+				</div>
 			</div>
 		</div>
 	);
