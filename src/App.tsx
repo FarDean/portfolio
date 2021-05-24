@@ -19,6 +19,7 @@ function App() {
 			<Route exact path="/contact">
 				<Home />
 			</Route>
+			<Route path="*" render={() => <h1>Not Found!</h1>} />
 		</Router>
 	);
 }
