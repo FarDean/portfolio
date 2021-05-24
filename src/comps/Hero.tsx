@@ -1,6 +1,6 @@
 import styles from "./../styles/Hero.module.css";
 
-export const Hero = (): JSX.Element => {
+export const Hero: React.FC = (): JSX.Element => {
 	return (
 		<div className={styles.parent}>
 			<div className={styles.grid}>
@@ -15,7 +15,6 @@ export const Hero = (): JSX.Element => {
 			<div className={styles.bio}>
 				<div>Hey, my name is Fardean,</div>
 				<div> I'm a JavaScript enthusiast, </div>
-
 				<div> and currently Code as a hobby!</div>
 			</div>
 			<div className={styles.social}>
