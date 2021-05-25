@@ -11,13 +11,13 @@ function App() {
 				<Route exact path="/">
 					<Home />
 				</Route>
-				<Route exact path="/works">
+				<Route path="/works">
 					<Works />
 				</Route>
-				<Route exact path="/about">
+				<Route path="/about">
 					<Home />
 				</Route>
-				<Route exact path="/contact">
+				<Route path="/contact">
 					<Home />
 				</Route>
 				<Route path="*" render={(): JSX.Element => <h1>Not Found!</h1>} />
