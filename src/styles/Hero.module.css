@@ -33,24 +33,71 @@
 
 .div1 {
 	grid-area: 1 / 1 / 2 / 2;
+	transition: all 2s ease;
 }
+
+.div1:hover {
+	transform: rotate(-360deg);
+	box-shadow: 0px 0px 50px 8px rgba(80, 191, 230, 0.5);
+}
+
 .div2 {
 	grid-area: 2 / 2 / 3 / 3;
+	transition: all 2s ease;
 }
+
+.div2:hover {
+	transform: scale(0.1, 0.1);
+	box-shadow: 0px 0px 50px 8px rgba(80, 191, 230, 0.5);
+}
+
 .div3 {
 	grid-area: 3 / 2 / 4 / 3;
+	transition: all 2s ease;
 }
+
+.div3:hover {
+	transform: matrix(1, -0.3, 0, 1, 0, 0);
+	box-shadow: 0px 0px 50px 8px rgba(80, 191, 230, 0.5);
+}
+
 .div4 {
 	grid-area: 4 / 3 / 5 / 4;
+	transition: all 4s ease;
+}
+
+.div4:hover {
+	transform: skew(180deg, 180deg);
+	box-shadow: 0px 0px 50px 8px rgba(80, 191, 230, 0.5);
 }
 .div5 {
 	grid-area: 5 / 4 / 6 / 5;
+	transition: all 2s ease;
 }
+
+.div5:hover {
+	transform: rotateX(360deg);
+	box-shadow: 0px 0px 50px 8px rgba(80, 191, 230, 0.5);
+}
+
 .div6 {
 	grid-area: 6 / 4 / 7 / 5;
+	transition: all 2s ease;
 }
+
+.div6:hover {
+	transform: rotateZ(360deg);
+	box-shadow: 0px 0px 50px 8px rgba(80, 191, 230, 0.5);
+}
+
 .div7 {
 	grid-area: 7 / 5 / 8 / 6;
+	transition: all 2s ease;
+}
+
+.div7:hover {
+	transform: rotate3d(1, 1, 1, 360deg);
+	box-shadow: 0px 0px 50px 8px rgba(80, 191, 230, 0.5);
 }
 
 .bio {
