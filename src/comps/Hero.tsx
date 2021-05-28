@@ -14,7 +14,7 @@ export const Hero: React.FC = (): JSX.Element => {
 			</div>
 			<div className={styles.bio}>
 				<div>Hey, my name is Fardean,</div>
-				<div> I'm a JavaScript enthusiast, </div>
+				<div>I'm a React Developer {"&"} JavaScript enthusiast,</div>
 				<div>I Code as a hobby!</div>
 			</div>
 			<div className={styles.social}>
