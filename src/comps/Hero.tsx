@@ -1,4 +1,6 @@
 import styles from "./../styles/Hero.module.css";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Hero: React.FC = (): JSX.Element => {
 	return (
@@ -20,7 +22,7 @@ export const Hero: React.FC = (): JSX.Element => {
 			<div className={styles.social}>
 				<div>
 					<a target="_blank" rel="noreferrer" href="https://github.com/FarDean">
-						<i className="fab fa-github"></i>
+						<FontAwesomeIcon icon={faGithub} />
 					</a>
 				</div>
 				{/* <div>

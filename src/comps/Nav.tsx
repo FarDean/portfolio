@@ -1,5 +1,12 @@
 import styles from "./../styles/Nav.module.css";
 import { Link, useRouteMatch, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faLaptopHouse,
+	faAddressCard,
+	faScroll,
+	faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 export const Nav = (): JSX.Element => {
 	let route = useRouteMatch();
@@ -12,25 +19,25 @@ export const Nav = (): JSX.Element => {
 		<div className={styles.nav}>
 			<div className={path === "/" ? styles.active : ""}>
 				<Link to="/">
-					<i className="fas fa-laptop-house"></i>
+					<FontAwesomeIcon icon={faLaptopHouse} />
 					<div>Home</div>
 				</Link>
 			</div>
 			<div className={path === "/about" ? styles.active : ""}>
 				<Link to="/about">
-					<i className="far fa-address-card"></i> <div> About</div>
+					<FontAwesomeIcon icon={faAddressCard} /> <div> About</div>
 				</Link>
 			</div>
 			<div className={path === "/works" ? styles.active : ""}>
 				<Link to="/works">
-					<i className="fas fa-scroll"></i>
+					<FontAwesomeIcon icon={faScroll} />
 					<div>Works</div>
 				</Link>
 			</div>
 
 			<div className={path === "/contact" ? styles.active : ""}>
 				<Link to="/contact">
-					<i className="far fa-envelope"></i>
+					<FontAwesomeIcon icon={faEnvelope} />
 					<div>Contact Me</div>
 				</Link>
 			</div>
