@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ContactMe } from "./comps/ContactMe";
 import { Home } from "./comps/Home";
 import { Nav } from "./comps/Nav";
 import { Works } from "./comps/Works";
@@ -18,7 +19,7 @@ function App() {
 					<Home />
 				</Route>
 				<Route path="/contact">
-					<Home />
+					<ContactMe />
 				</Route>
 				<Route path="*" render={(): JSX.Element => <h1>Not Found!</h1>} />
 			</Switch>
