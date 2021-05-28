@@ -107,6 +107,7 @@
 	grid-area: 1 / 2 / 2 / 3;
 	align-items: center;
 	padding-top: 20px;
+	text-align: center;
 }
 
 .bio div {
