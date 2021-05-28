@@ -8,29 +8,38 @@
 }
 
 .parent div {
-	min-height: 35vh;
+	height: 35vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
+
 	overflow: hidden;
 	border-radius: 5px;
 	position: relative;
+	overflow: hidden;
 }
 
-.parent div:hover div:after {
-	height: 100%;
+.parent div:hover .cardcontent {
+	bottom: -40%;
 }
 
-.parent div:after {
-	content: "";
+.cardcontent {
 	width: 100%;
-	height: 0;
 	transition: all 1s ease;
 	position: absolute;
-	bottom: 0;
+	bottom: -88%;
+
 	left: 0;
-	background-color: rgba(200, 200, 200, 0.5);
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	color: #333;
+	padding: 0.9em 0;
+	background-color: rgba(80, 191, 230, 0.5);
+}
+
+.cardcontent div {
+	padding: 2em;
 }
 
 .div1 {
