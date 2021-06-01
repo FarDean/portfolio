@@ -27,7 +27,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 					<label htmlFor="message">Message:</label>
 				</div>
 				<div>
-					<textarea name="message" id="" cols={30} rows={10}></textarea>
+					<textarea spellCheck name="message" id="" cols={30} rows={10}></textarea>
 					<h6>You message should be at least 20 charachters!</h6>
 				</div>
 				<input type="submit" />
