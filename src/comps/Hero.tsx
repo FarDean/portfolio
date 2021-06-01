@@ -21,7 +21,12 @@ export const Hero: React.FC = (): JSX.Element => {
 			</div>
 			<div className={styles.social}>
 				<div>
-					<a target="_blank" rel="noreferrer" href="https://github.com/FarDean">
+					<a
+						aria-label="Github Profile"
+						target="_blank"
+						rel="noreferrer"
+						href="https://github.com/FarDean"
+					>
 						<FontAwesomeIcon icon={faGithub} />
 					</a>
 				</div>
