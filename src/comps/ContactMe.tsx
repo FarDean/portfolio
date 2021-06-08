@@ -1,6 +1,22 @@
 import styles from "./../styles/ContactMe.module.css";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+interface Inputs {
+	name: string;
+	email: string;
+	message: string;
+}
 
 export const ContactMe: React.FC = (): JSX.Element => {
+	const {
+		register,
+		handleSubmit,
+		watch,
+		formState: { errors },
+	} = useForm<Inputs>();
+	const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+	console.log(watch("name"));
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.hr}>
@@ -8,27 +24,55 @@ export const ContactMe: React.FC = (): JSX.Element => {
 				<h3>Contact Me</h3>
 				<div></div>
 			</div>
-			<form className={styles.form}>
+			<form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 				<div>
 					<label htmlFor="name">Name</label>
 				</div>
 				<div>
-					<input type="text" name="name" id="name" />
-					<h6>You need to fill in your name!</h6>
+					<input
+						{...register("name", { required: true, minLength: "3", maxLength: "30" })}
+						type="text"
+						name="name"
+						id="name"
+					/>
+
+					{(errors.name?.type === "minLength" || errors.name?.type === "minLength") && (
+						<h6>Name must be at least 3 and maximum 30 charachters!</h6>
+					)}
 				</div>
 				<div>
 					<label htmlFor="email">Email</label>
 				</div>
 				<div>
-					<input type="email" />
-					<h6>You need to fill in your Email!</h6>
+					<input
+						{...register("email", {
+							required: true,
+							pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+						})}
+						type="email"
+					/>
+					{errors.email?.type === "required" && <h6>You need to fill in your Email!</h6>}
+					{errors.email?.type === "pattern" && <h6>Please use a valid Email!</h6>}
 				</div>
 				<div>
 					<label htmlFor="message">Message:</label>
 				</div>
 				<div>
-					<textarea spellCheck name="message" id="" cols={30} rows={10}></textarea>
-					<h6>You message should be at least 20 charachters!</h6>
+					<textarea
+						{...register("message", {
+							required: true,
+							minLength: "20",
+							maxLength: "300",
+						})}
+						spellCheck
+						name="message"
+						id=""
+						cols={30}
+						rows={10}
+					></textarea>
+					{errors.message && (
+						<h6>Your message should be at least 20 and maximum 300 charachters!</h6>
+					)}
 				</div>
 				<input type="submit" />
 			</form>
