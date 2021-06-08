@@ -45,7 +45,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 					<input
 						{...register("email", {
 							required: true,
-							pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+							pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
 						})}
 						type="email"
 					/>
