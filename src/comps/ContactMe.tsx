@@ -36,9 +36,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 						id="name"
 					/>
 
-					{(errors.name?.type === "minLength" || errors.name?.type === "minLength") && (
-						<h6>Name must be at least 3 and maximum 30 charachters!</h6>
-					)}
+					{errors.name && <h6>Name must be at least 3 and maximum 30 charachters!</h6>}
 				</div>
 				<div>
 					<label htmlFor="email">Email</label>
