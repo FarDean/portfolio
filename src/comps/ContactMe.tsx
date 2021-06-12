@@ -1,5 +1,6 @@
 import styles from "./../styles/ContactMe.module.css";
 import { useForm, SubmitHandler } from "react-hook-form";
+import emailjs from "emailjs-com";
 
 interface Inputs {
 	name: string;
@@ -14,7 +15,23 @@ export const ContactMe: React.FC = (): JSX.Element => {
 		formState: { errors },
 	} = useForm<Inputs>();
 
-	const onSubmit: SubmitHandler<Inputs> = (data, e) => console.log(e);
+	const onSubmit: SubmitHandler<Inputs> = (data, e) => {
+		emailjs
+			.sendForm(
+				process.env.REACT_APP_SERVICE_ID!,
+				process.env.REACT_APP_TEMPLATE_ID!,
+				e?.target,
+				process.env.REACT_APP_USER_ID
+			)
+			.then(
+				result => {
+					console.log(result.text);
+				},
+				error => {
+					console.log(error.text);
+				}
+			);
+	};
 
 	return (
 		<div className={styles.container}>
@@ -47,6 +64,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 							pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
 						})}
 						type="email"
+						name="email"
 					/>
 					{errors.email?.type === "required" && <h6>You need to fill in your Email!</h6>}
 					{errors.email?.type === "pattern" && <h6>Please use a valid Email!</h6>}
