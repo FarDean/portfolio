@@ -59,7 +59,7 @@
 }
 
 .form input[type="submit"] {
-	width: 50%;
+	width: 30%;
 	margin-top: 10px;
 	border: none;
 	padding: 1em 2em;
@@ -79,6 +79,7 @@
 .form input[type="submit"]:disabled {
 	background-color: grey;
 	color: black;
+	transform: none;
 }
 
 .recaptcha {
@@ -93,6 +94,44 @@
 	.hr {
 		display: none;
 	}
+	/* .form input[type="submit"] {
+		width: 20%;
+	} */
 }
 @media (min-width: 700px) {
+	.form {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: 900px) {
+	.form {
+		width: 70%;
+	}
+	.form div:nth-child(2),
+	.form div:nth-child(4) {
+		width: 60%;
+		align-self: flex-start;
+	}
+	/* .form input[type="submit"] {
+		align-self: flex-start;
+		margin-left: 11px;
+	} */
+}
+
+@media (min-width: 1200px) {
+	.form {
+		width: 60%;
+	}
+}
+@media (min-width: 1500px) {
+	.form {
+		width: 50%;
+	}
+	.form div:nth-child(2),
+	.form div:nth-child(4) {
+		width: 50%;
+		align-self: flex-start;
+	}
 }
