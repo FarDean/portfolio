@@ -1,23 +1,27 @@
 import styles from "./../styles/ContactMe.module.css";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import emailjs from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface Inputs {
 	name: string;
 	email: string;
 	message: string;
+	recaptcha: string;
 }
 
 export const ContactMe: React.FC = (): JSX.Element => {
 	const {
 		register,
 		handleSubmit,
+		watch,
+		control,
 		formState: { errors, isValid },
 	} = useForm<Inputs>({
-		mode: "onTouched",
+		mode: "onChange",
 	});
 
-	console.log(isValid);
+	console.log(watch("recaptcha"));
 
 	const onSubmit: SubmitHandler<Inputs> = (data, e) => {
 		emailjs
@@ -93,6 +97,20 @@ export const ContactMe: React.FC = (): JSX.Element => {
 						<h6>Your message should be at least 20 and maximum 300 charachters!</h6>
 					)}
 				</div>
+
+				<Controller
+					control={control}
+					name="recaptcha"
+					rules={{ required: true }}
+					render={({ field: { onChange } }) => (
+						<ReCAPTCHA
+							sitekey={"6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
+							onChange={onChange}
+						/>
+					)}
+				/>
+				{errors.recaptcha && <h6>You need to complete the recaptcha!</h6>}
+
 				<input disabled={!isValid} type="submit" />
 			</form>
 		</div>
