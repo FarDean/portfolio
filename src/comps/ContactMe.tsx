@@ -2,6 +2,7 @@ import styles from "./../styles/ContactMe.module.css";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
 
 interface Inputs {
 	name: string;
@@ -11,6 +12,8 @@ interface Inputs {
 }
 
 export const ContactMe: React.FC = (): JSX.Element => {
+	const [loading, setLoading] = useState<boolean>(false);
+
 	const {
 		register,
 		handleSubmit,
@@ -24,6 +27,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 	console.log(watch("recaptcha"));
 
 	const onSubmit: SubmitHandler<Inputs> = (data, e) => {
+		setLoading(true);
 		emailjs
 			.sendForm(
 				process.env.REACT_APP_SERVICE_ID!,
@@ -39,6 +43,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 					console.log(error.text);
 				}
 			);
+		setLoading(false);
 	};
 
 	return (
@@ -111,7 +116,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 				/>
 				{errors.recaptcha && <h6>You need to complete the recaptcha!</h6>}
 
-				<input disabled={!isValid} type="submit" />
+				<input disabled={!isValid || loading} type="submit" />
 			</form>
 		</div>
 	);
