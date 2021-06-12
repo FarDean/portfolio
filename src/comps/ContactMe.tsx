@@ -11,11 +11,10 @@ export const ContactMe: React.FC = (): JSX.Element => {
 	const {
 		register,
 		handleSubmit,
-		watch,
 		formState: { errors },
 	} = useForm<Inputs>();
-	const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
-	console.log(watch("name"));
+
+	const onSubmit: SubmitHandler<Inputs> = (data, e) => console.log(e);
 
 	return (
 		<div className={styles.container}>
