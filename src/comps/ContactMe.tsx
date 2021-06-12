@@ -12,8 +12,12 @@ export const ContactMe: React.FC = (): JSX.Element => {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors },
-	} = useForm<Inputs>();
+		formState: { errors, isValid },
+	} = useForm<Inputs>({
+		mode: "onTouched",
+	});
+
+	console.log(isValid);
 
 	const onSubmit: SubmitHandler<Inputs> = (data, e) => {
 		emailjs
@@ -89,7 +93,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 						<h6>Your message should be at least 20 and maximum 300 charachters!</h6>
 					)}
 				</div>
-				<input type="submit" />
+				<input disabled={!isValid} type="submit" />
 			</form>
 		</div>
 	);
