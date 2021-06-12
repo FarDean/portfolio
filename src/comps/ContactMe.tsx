@@ -3,6 +3,8 @@ import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
+import { Spinner } from "./utils/Spinner";
+import { Alert } from "./utils/Alert";
 
 interface Inputs {
 	name: string;
@@ -12,7 +14,8 @@ interface Inputs {
 }
 
 export const ContactMe: React.FC = (): JSX.Element => {
-	const [loading, setLoading] = useState<boolean>(false);
+	const [loading, setLoading] = useState<boolean>(true);
+	const [message, setMessage] = useState<null | string>(null);
 
 	const {
 		register,
@@ -37,7 +40,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 			)
 			.then(
 				result => {
-					console.log(result.text);
+					setMessage("success");
 				},
 				error => {
 					console.log(error.text);
@@ -45,6 +48,8 @@ export const ContactMe: React.FC = (): JSX.Element => {
 			);
 		setLoading(false);
 	};
+
+	if (loading) return <Alert name={"fardean"} result={"success"} />;
 
 	return (
 		<div className={styles.container}>
