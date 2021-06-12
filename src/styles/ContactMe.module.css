@@ -41,7 +41,7 @@
 	font-size: 0.9rem;
 }
 
-.form div h6 {
+.form h6 {
 	padding-left: 1em;
 	color: tomato;
 }
@@ -87,4 +87,12 @@
 	align-items: center;
 	width: 100px;
 	margin: 0 auto;
+}
+
+@media (min-width: 555px) {
+	.hr {
+		display: none;
+	}
+}
+@media (min-width: 700px) {
 }
