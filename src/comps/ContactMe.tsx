@@ -60,6 +60,8 @@ export const ContactMe: React.FC = (): JSX.Element => {
 			);
 	};
 
+	if (!process.env.REACT_APP_RECAPTCHA_SITE_KEY) return <Spinner />;
+
 	return loading ? (
 		<Spinner />
 	) : (
