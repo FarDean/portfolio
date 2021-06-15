@@ -14,7 +14,7 @@ interface Inputs {
 }
 
 export const ContactMe: React.FC = (): JSX.Element => {
-	const [loading, setLoading] = useState<boolean>(true);
+	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<null | string>(null);
 
 	const {
