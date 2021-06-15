@@ -2,9 +2,8 @@ import styles from "./../styles/ContactMe.module.css";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Spinner } from "./utils/Spinner";
-import { Alert } from "./utils/Alert";
 import { Modal } from "./utils/Modal";
 
 interface Inputs {
@@ -16,8 +15,9 @@ interface Inputs {
 
 export const ContactMe: React.FC = (): JSX.Element => {
 	const [loading, setLoading] = useState<boolean>(false);
-	const [message, setMessage] = useState<null | string>(null);
-	const [open, setOpen] = useState<boolean>(true);
+	const [message, setMessage] = useState<string>("");
+	const [open, setOpen] = useState<boolean>(false);
+	const [resolved, setResolved] = useState<boolean>(false);
 
 	const {
 		register,
@@ -29,7 +29,11 @@ export const ContactMe: React.FC = (): JSX.Element => {
 		mode: "onChange",
 	});
 
-	console.log(watch("recaptcha"));
+	useEffect(() => {
+		return () => {
+			setOpen(false);
+		};
+	}, []);
 
 	const onSubmit: SubmitHandler<Inputs> = (data, e) => {
 		setLoading(true);
@@ -42,18 +46,27 @@ export const ContactMe: React.FC = (): JSX.Element => {
 			)
 			.then(
 				result => {
-					setMessage("success");
+					setResolved(true);
+					setMessage("Thanks for visiting my website, Have a nice day!");
+					setOpen(true);
+					setLoading(false);
 				},
 				error => {
-					console.log(error.text);
+					setResolved(false);
+					setMessage("Sorry, your message wasn't sent!");
+					setOpen(true);
+					setLoading(false);
 				}
 			);
-		setLoading(false);
 	};
 
-	if (loading) return <Alert name={"fardean"} result={"success"} />;
+	console.log(loading);
 
-	return (
+	// if (loading) return <Spinner />;
+
+	return loading ? (
+		<Spinner />
+	) : (
 		<div className={styles.container}>
 			<div className={styles.hr}>
 				<div></div>
@@ -116,7 +129,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 					rules={{ required: true }}
 					render={({ field: { onChange } }) => (
 						<ReCAPTCHA
-							sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY!}
+							sitekey={"6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"}
 							onChange={onChange}
 						/>
 					)}
@@ -125,7 +138,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 
 				<input disabled={!isValid || loading} type="submit" />
 			</form>
-			<Modal open={open} message={"kos"} resolved={true} name={watch("name")} />
+			<Modal open={open} message={message} resolved={resolved} name={watch("name")} />
 		</div>
 	);
 };

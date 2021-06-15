@@ -1,7 +1,7 @@
 import styles from "./../../styles/utils/Modal.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 interface Props {
 	message: string;
@@ -11,6 +11,8 @@ interface Props {
 }
 
 export const Modal: React.FC<Props> = ({ message, open, resolved, name }): JSX.Element => {
+	const history = useHistory();
+
 	return (
 		<div className={`center ${styles.modal} ${open ? styles.open : ""}`}>
 			<div className={styles.wrapper}>
@@ -23,11 +25,15 @@ export const Modal: React.FC<Props> = ({ message, open, resolved, name }): JSX.E
 						)}
 					</h1>
 					<h3>
-						Hey, <span>{name}</span> <br />
+						Hey <span>{name}</span>, <br />
 						{message}
 					</h3>
 
-					{resolved ? <Link to="/">OK</Link> : <Link to="/contact">Try again!</Link>}
+					{resolved ? (
+						<button onClick={() => history.push("/")}>OK</button>
+					) : (
+						<button onClick={() => history.go(0)}>Try again!</button>
+					)}
 				</div>
 			</div>
 		</div>
