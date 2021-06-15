@@ -1,5 +1,5 @@
 import styles from "./../styles/Nav.module.css";
-import { Link, useRouteMatch, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faLaptopHouse,
@@ -9,11 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export const Nav = (): JSX.Element => {
-	let route = useRouteMatch();
-	let location = useLocation();
 	let path = useLocation().pathname;
-
-	console.log(location, route);
 
 	return (
 		<div className={styles.nav}>

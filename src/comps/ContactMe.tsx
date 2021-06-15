@@ -60,10 +60,6 @@ export const ContactMe: React.FC = (): JSX.Element => {
 			);
 	};
 
-	console.log(loading);
-
-	// if (loading) return <Spinner />;
-
 	return loading ? (
 		<Spinner />
 	) : (
