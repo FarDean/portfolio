@@ -5,6 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
 import { Spinner } from "./utils/Spinner";
 import { Alert } from "./utils/Alert";
+import { Modal } from "./utils/Modal";
 
 interface Inputs {
 	name: string;
@@ -16,6 +17,7 @@ interface Inputs {
 export const ContactMe: React.FC = (): JSX.Element => {
 	const [loading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<null | string>(null);
+	const [open, setOpen] = useState<boolean>(true);
 
 	const {
 		register,
@@ -123,6 +125,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 
 				<input disabled={!isValid || loading} type="submit" />
 			</form>
+			<Modal open={open} message={"kos"} resolved={true} name={watch("name")} />
 		</div>
 	);
 };
