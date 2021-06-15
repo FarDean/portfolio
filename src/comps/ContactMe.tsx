@@ -60,8 +60,6 @@ export const ContactMe: React.FC = (): JSX.Element => {
 			);
 	};
 
-	console.log(process.env.REACT_APP_SITE_KEY);
-
 	return loading ? (
 		<Spinner />
 	) : (
