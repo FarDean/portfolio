@@ -47,7 +47,7 @@ export const ContactMe: React.FC = (): JSX.Element => {
 			.then(
 				result => {
 					setResolved(true);
-					setMessage("Thanks for visiting my website, Have a nice day!");
+					setMessage("Thanks for visiting, Have a nice day!");
 					setOpen(true);
 					setLoading(false);
 				},
