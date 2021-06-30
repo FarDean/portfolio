@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { About } from "./comps/About";
 import { ContactMe } from "./comps/ContactMe";
 import { Home } from "./comps/Home";
 import { Nav } from "./comps/Nav";
@@ -16,7 +17,7 @@ function App() {
 					<Works />
 				</Route>
 				<Route path="/about">
-					<Home />
+					<About />
 				</Route>
 				<Route path="/contact">
 					<ContactMe />
