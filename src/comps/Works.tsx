@@ -1,39 +1,23 @@
 import styles from "./../styles/Works.module.css";
+import football from "./../assets/football480.jpg";
+import blog from "./../assets/mern-blog-480.jpg";
 
 export const Works = (): JSX.Element => {
 	return (
-		<div>
+		<div className={styles.container}>
+			<div className={styles.hr}>
+				<div></div>
+				<h3>My Projects</h3>
+				<div></div>
+			</div>
 			<div className={styles.parent}>
 				<div className={styles.div1}>
-					<div className={styles.cardcontent}>
-						<h3>MERN Blog</h3>
-						<div>
-							<div>Details</div>
-							<div>github</div>
-							<div>Link</div>
-						</div>
-					</div>
+					<img src={blog} loading="lazy" alt="MERN Blog" />
 				</div>
 				<div className={styles.div2}>
-					<div className={styles.cardcontent}>
-						<h3>MERN Blog</h3>
-						<div>
-							<div>Details</div>
-							<div>github</div>
-							<div>Link</div>
-						</div>
-					</div>
+					<img src={football} alt="Football App" />
 				</div>
-				<div className={styles.div3}>
-					<div className={styles.cardcontent}>
-						<h3>MERN Blog</h3>
-						<div>
-							<div>Details</div>
-							<div>github</div>
-							<div>Link</div>
-						</div>
-					</div>
-				</div>
+				{/* <div className={styles.div3}> project3</div> */}
 			</div>
 		</div>
 	);

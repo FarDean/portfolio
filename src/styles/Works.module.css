@@ -1,57 +1,98 @@
+.container {
+	width: 90%;
+	margin: 0 auto;
+	padding: 1em;
+}
+
+.hr {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.5em;
+}
+
+.hr div:first-child {
+	width: 15%;
+	height: 1px;
+	background-color: #fff;
+}
+.hr div:last-child {
+	width: 57%;
+	height: 1px;
+	background-color: #fff;
+}
+
+.hr h3 {
+	margin: 0 0.4em 0 0.4em;
+	width: 25%;
+	text-align: center;
+	font-size: 1rem;
+}
+@media (min-width: 555px) {
+	.hr {
+		display: none;
+	}
+}
+
 .parent {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(3, 1fr);
 	grid-column-gap: 0px;
-	grid-row-gap: 16px;
-	padding: 1em 2em;
+	grid-row-gap: 30px;
 }
 
 .parent div {
-	height: 35vh;
-	width: 100%;
 	display: flex;
+	align-items: center;
 	justify-content: center;
-
-	overflow: hidden;
-	border-radius: 5px;
-	position: relative;
-	overflow: hidden;
-}
-
-.parent div:hover .cardcontent {
-	bottom: -40%;
-}
-
-.cardcontent {
-	width: 100%;
-	transition: all 1s ease;
-	position: absolute;
-	bottom: -88%;
-
-	left: 0;
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	color: #333;
-	padding: 0.9em 0;
-	background-color: rgba(80, 191, 230, 0.5);
-}
-
-.cardcontent div {
-	padding: 2em;
 }
 
 .div1 {
 	grid-area: 1 / 1 / 2 / 2;
-	background-image: url(./../assets/fardeanblog-herokuapp-com-1024x768desktop-e6276b.jpg);
-	background-size: 100% 100%;
-	background-position: center;
-	background-repeat: no-repeat;
 }
 .div2 {
 	grid-area: 2 / 1 / 3 / 2;
 }
 .div3 {
 	grid-area: 3 / 1 / 4 / 2;
+}
+
+@media (min-width: 700px) {
+	.parent {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-column-gap: 30px;
+		grid-row-gap: px;
+		min-height: 50vh;
+	}
+
+	.div1 {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+	.div2 {
+		grid-area: 1 / 2 / 2 / 3;
+	}
+	.div3 {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+}
+@media (min-width: 1200px) {
+	.parent {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: 30px;
+		grid-row-gap: px;
+	}
+
+	.div1 {
+		grid-area: 1 / 1 / 2 / 2;
+	}
+	.div2 {
+		grid-area: 1 / 2 / 2 / 3;
+	}
+	.div3 {
+		grid-area: 1 / 3 / 2 / 4;
+	}
 }
