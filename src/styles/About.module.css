@@ -1,0 +1,50 @@
+.container {
+	width: 90%;
+	margin: 0 auto;
+	padding: 1em;
+}
+.hr {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.5em;
+}
+
+.hr div:first-child {
+	width: 15%;
+	height: 1px;
+	background-color: #fff;
+}
+.hr div:last-child {
+	width: 57%;
+	height: 1px;
+	background-color: #fff;
+}
+
+.hr h3 {
+	margin: 0 0.4em 0 0.4em;
+	width: 25%;
+	text-align: center;
+	font-size: 1rem;
+}
+@media (min-width: 555px) {
+	.hr {
+		display: none;
+	}
+}
+
+.about {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.img {
+	padding: 1em;
+}
+
+.p {
+	line-height: 1.3;
+	padding: 1.5em;
+	text-align: center;
+}
