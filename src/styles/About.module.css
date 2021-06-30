@@ -41,10 +41,23 @@
 
 .img {
 	padding: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.img img {
+	clip-path: ellipse(300px 350px at 30% 20%);
 }
 
 .p {
 	line-height: 1.3;
 	padding: 1.5em;
 	text-align: center;
+}
+
+@media (min-width: 555px) {
+	.img img {
+		clip-path: ellipse(380px 450px at 30% 20%);
+	}
 }

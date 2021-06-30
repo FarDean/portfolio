@@ -1,5 +1,6 @@
 import portrait from "././../assets/portrait.jpg";
 import styles from "./../styles/About.module.css";
+
 export const About: React.FC = (): JSX.Element => {
 	return (
 		<div className={styles.container}>
