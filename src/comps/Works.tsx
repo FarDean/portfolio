@@ -12,10 +12,14 @@ export const Works = (): JSX.Element => {
 			</div>
 			<div className={styles.parent}>
 				<div className={styles.div1}>
-					<img src={blog} loading="lazy" alt="MERN Blog" />
+					<div>
+						<img src={blog} loading="lazy" alt="MERN Blog" />
+					</div>
 				</div>
 				<div className={styles.div2}>
-					<img src={football} loading="lazy" alt="Football App" />
+					<div>
+						<img src={football} loading="lazy" alt="Football App" />
+					</div>
 				</div>
 				{/* <div className={styles.div3}> project3</div> */}
 			</div>
