@@ -23,6 +23,19 @@ export const About: React.FC = (): JSX.Element => {
 						quibusdam quis blanditiis impedit, distinctio est ad totam debitis
 						voluptates! Deleniti facilis praesentium delectus?
 					</p>
+					<p>
+						quibusdam quis blanditiis impedit, distinctio est ad totam debitis
+						voluptates! Deleniti facilis praesentium delectus?
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ratione esse
+						ut commodi magni iure modi. Optio fugiat deserunt ab assumenda asperiores?
+						Similique alias tenetur velit autem, unde repudiandae cum natus. Temporibus,
+						ipsam. Doloremque, culpa beatae. Ea, dolores exercitationem, culpa atque
+						similique accusantium ipsam hic corrupti amet qui nobis cum aliquam
+						inventore sunt vel eligendi eaque laudantium officiis quo soluta in
+						doloremque illo eius aspernatur. Maiores!
+					</p>
 				</div>
 			</div>
 		</div>
