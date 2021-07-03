@@ -1,4 +1,4 @@
-import portrait from "././../assets/portrait.jpg";
+// import portrait from "././../assets/portrait.jpg";
 import styles from "./../styles/About.module.css";
 
 export const About: React.FC = (): JSX.Element => {
@@ -11,7 +11,7 @@ export const About: React.FC = (): JSX.Element => {
 			</div>
 			<div className={styles.about}>
 				<div className={styles.img}>
-					<img loading="lazy" src={portrait} alt="Face" />
+					{/* <img loading="lazy" src={portrait} alt="Face" /> */}
 				</div>
 				<div className={styles.p}>
 					<p>
