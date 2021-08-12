@@ -4,8 +4,16 @@ import blog from "./../assets/mern-blog-480.jpg";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
 
 export const Works = (): JSX.Element => {
+	const [imgStatus, setImgStatus] = useState({ img1: false, img2: false });
+	const [loaded, setLoaded] = useState(false);
+	console.log(imgStatus, loaded);
+	useEffect(() => {
+		if (imgStatus.img1 && imgStatus.img2) setLoaded(true);
+	}, [imgStatus]);
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.hr}>
@@ -16,7 +24,12 @@ export const Works = (): JSX.Element => {
 			<div className={styles.parent}>
 				<div className={styles.div1}>
 					<div>
-						<img src={blog} loading="lazy" alt="MERN Blog" />
+						<img
+							onLoad={() => setImgStatus({ ...imgStatus, img1: true })}
+							src={blog}
+							loading="lazy"
+							alt="MERN Blog"
+						/>
 						<div className={styles.content}>
 							<div>
 								<a
@@ -43,7 +56,12 @@ export const Works = (): JSX.Element => {
 				</div>
 				<div className={styles.div2}>
 					<div>
-						<img src={football} loading="lazy" alt="Football App" />
+						<img
+							onLoad={() => setImgStatus({ ...imgStatus, img2: true })}
+							src={football}
+							loading="lazy"
+							alt="Football App"
+						/>
 						<div className={styles.content}>
 							<div>
 								<a
