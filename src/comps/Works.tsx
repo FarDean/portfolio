@@ -5,6 +5,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
+import { Spinner } from "./utils/Spinner";
 
 export const Works = (): JSX.Element => {
 	const [imgStatus, setImgStatus] = useState({ img1: false, img2: false });
@@ -21,6 +22,12 @@ export const Works = (): JSX.Element => {
 				<h3>My Projects</h3>
 				<div></div>
 			</div>
+			{!loaded && (
+				<div className={styles.spinner}>
+					{" "}
+					<Spinner />
+				</div>
+			)}
 			<div className={styles.parent}>
 				<div className={styles.div1}>
 					<div>
